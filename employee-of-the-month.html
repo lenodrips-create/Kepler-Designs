@@ -67,7 +67,7 @@
   .doc a { color: var(--link); font-weight: 500; }
   .doc a.btn { color: #fff; }
   .eom-card { display: flex; flex-wrap: wrap; gap: 32px; align-items: center; background: var(--tint); border: 1px solid var(--line); border-radius: 16px; padding: 36px; }
-  .eom-photo { width: 160px; height: 160px; border-radius: 50%; background: var(--blue); color: #fff; font-size: 64px; display: flex; align-items: center; justify-content: center; flex: none; }
+  .eom-photo { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; object-position: center 20%; border: 4px solid #fff; box-shadow: 0 4px 16px rgba(16,29,37,.18); flex: none; }
   .eom-card > div:last-child { flex: 1 1 280px; }
   .eom-card h2 { margin: 0 0 4px; }
 
@@ -244,7 +244,7 @@
 <main class="doc eom">
   <p class="updated">November 2026</p>
   <div class="eom-card">
-    <div class="eom-photo" aria-hidden="true">★</div>
+    <img class="eom-photo" src="employee-of-the-month.webp" alt="Employee of the Month portrait">
     <div>
       <h2>[EMPLOYEE NAME]</h2>
       <h3>[ROLE]</h3>
