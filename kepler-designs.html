@@ -394,17 +394,6 @@
   </div>
 </section>
 
-<!-- STATS — put your real numbers in data-value, e.g. data-value="98%" or "120+" -->
-<section class="section" id="results">
-  <div class="wrap">
-    <div class="stats" id="stats">
-      <div class="stat"><span class="num" data-value="98%">0</span><span class="label">Happy Clients</span></div>
-      <div class="stat"><span class="num" data-value="150+">0</span><span class="label">Projects Launched</span></div>
-      <div class="stat"><span class="num" data-value="60+">0</span><span class="label">Brands Built</span></div>
-      <div class="stat"><span class="num" data-value="5">0</span><span class="label">Years Designing</span></div>
-    </div>
-  </div>
-</section>
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
@@ -485,46 +474,6 @@
       if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
     }), { threshold: 0.2 });
     rows.forEach(r => io.observe(r));
-  })();
-
-  // Stats: fade up and count from 0 when scrolled into view.
-  // Works with values like "98%", "$10B", "120+", "1,500". Non-numbers just fade in.
-  (() => {
-    const box = document.getElementById('stats');
-    const nums = [...box.querySelectorAll('.num')];
-    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    const format = (value, t) => {
-      const m = value.match(/^([^0-9]*)([0-9][0-9,]*(?:\.[0-9]+)?)(.*)$/);
-      if (!m) return value;
-      const raw = m[2].replace(/,/g, '');
-      const dec = (raw.split('.')[1] || '').length;
-      let n = (parseFloat(raw) * t).toFixed(dec);
-      if (m[2].includes(',')) n = Number(n).toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec });
-      return m[1] + n + m[3];
-    };
-
-    function play() {
-      box.classList.remove('waiting');
-      const t0 = performance.now();
-      nums.forEach((el, i) => {
-        const value = el.dataset.value;
-        el.parentElement.style.transitionDelay = (i * 0.15) + 's';
-        const tick = now => {
-          const t = Math.min(1, Math.max(0, (now - t0 - i * 150) / 1600));
-          el.textContent = format(value, 1 - Math.pow(1 - t, 3));
-          if (t < 1) requestAnimationFrame(tick);
-        };
-        requestAnimationFrame(tick);
-      });
-    }
-
-    if (reduce || !('IntersectionObserver' in window)) return;
-    const io = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) { io.disconnect(); play(); }
-      else box.classList.add('waiting');
-    }, { threshold: 0.3 });
-    io.observe(box);
   })();
 </script>
 
