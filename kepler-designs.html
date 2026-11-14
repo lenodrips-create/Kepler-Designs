@@ -123,12 +123,7 @@
   .stat .label { font-size: 22px; color: var(--text); }
   .stats.waiting .stat { opacity: 0; transform: translateY(24px); }
 
-  /* ---------- contact + footer ---------- */
-  .contact { background: var(--blue); color: #fff; padding: 100px 0; }
-  .contact .wrap { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px; }
-  .contact h2 { font-weight: 700; font-size: clamp(36px, 4vw, 54px); line-height: 1.15; color: #fff; }
-  .contact p { font-size: 19px; line-height: 1.65; max-width: 640px; }
-  .contact .btn { margin-top: 10px; font-size: 18px; padding: 17px 30px; }
+  /* ---------- footer ---------- */
 
   footer { background: #1A2F4D; color: #A3ACB8; }
   footer a { color: #A3ACB8; text-decoration: none; transition: color .15s; }
@@ -318,6 +313,33 @@
   }
   @media (prefers-reduced-motion: reduce) {
     .build-handle span { transition: none; }
+  }
+
+  /* ---------- contact ---------- */
+  .contact { background: var(--blue); color: #fff; padding: 104px 0; }
+  .contact .wrap { display: flex; align-items: center; gap: 56px 88px; }
+  .contact-text { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+  .contact h2 { font-weight: 900; font-size: clamp(36px, 4.2vw, 58px); line-height: 1.06; letter-spacing: -0.02em; color: #fff; text-wrap: balance; }
+  .contact-text p { font-size: 20px; line-height: 1.6; max-width: 460px; color: #DCE6F4; }
+  .contact-text .btn { margin-top: 10px; }
+  .reach { flex: 0 1 46%; min-width: 0; list-style: none; margin: 0; padding: 0; border-bottom: 1px solid rgba(255,255,255,.28); }
+  .reach a { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 26px 4px; border-top: 1px solid rgba(255,255,255,.28); color: #fff; text-decoration: none; }
+  .reach .k { display: block; font-size: 15px; color: #C9D8EE; margin-bottom: 4px; }
+  .reach .v { display: block; font-size: clamp(21px, 2.3vw, 30px); font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; overflow-wrap: anywhere; }
+  .reach svg { flex: none; transition: transform .2s ease; }
+  .reach a:hover { color: #fff; }
+  .reach a:hover .v { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; }
+  .reach a:hover svg { transform: translateX(6px); }
+  .reach a:focus-visible { outline: 3px solid #fff; outline-offset: 2px; border-radius: 3px; }
+  @media (max-width: 860px) {
+    .contact { padding: 68px 0 72px; }
+    .contact .wrap { flex-direction: column; align-items: stretch; gap: 40px; }
+    .contact-text p { font-size: 18px; }
+    .reach { flex: 0 0 auto; }
+    .reach a { padding: 22px 2px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reach svg { transition: none; }
   }
 </style>
 <link rel="icon" type="image/png" href="icon.png">
@@ -530,9 +552,21 @@
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="wrap">
-    <h2>Got a Project? Let's Talk.</h2>
-    <p>Tell us what you're building and we'll get back to you within [RESPONSE TIME].</p>
-    <a href="mailto:lenodrips@gmail.com" class="btn btn-orange">lenodrips@gmail.com</a>
+    <div class="contact-text">
+      <h2>Got a Project? Let's&nbsp;Talk.</h2>
+      <p>Tell us what you're building, whichever way is easiest for you.</p>
+      <a href="start-a-project.html" class="btn btn-orange btn-lg">Start a Project</a>
+    </div>
+    <ul class="reach">
+      <li><a href="mailto:lenodrips@gmail.com">
+        <span><span class="k">Email us</span><span class="v">lenodrips@gmail.com</span></span>
+        <svg aria-hidden="true" width="26" height="16" viewBox="0 0 22 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 7h19M14 1l6 6-6 6"/></svg>
+      </a></li>
+      <li><a href="tel:+17174943284">
+        <span><span class="k">Call us</span><span class="v">(717) 494-3284</span></span>
+        <svg aria-hidden="true" width="26" height="16" viewBox="0 0 22 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 7h19M14 1l6 6-6 6"/></svg>
+      </a></li>
+    </ul>
   </div>
 </section>
 
