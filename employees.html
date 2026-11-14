@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Employee of the Month · Kepler Designs</title>
+<title>Employees · Kepler Designs</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -66,6 +66,7 @@
   .doc ul { margin: 12px 0 0; padding-left: 22px; display: flex; flex-direction: column; gap: 8px; }
   .doc a { color: var(--link); font-weight: 500; }
   .doc a.btn { color: #fff; }
+  .eom-card + .eom-card { margin-top: 24px; }
   .eom-card { display: flex; flex-wrap: wrap; gap: 32px; align-items: center; background: var(--tint); border: 1px solid var(--line); border-radius: 16px; padding: 36px; }
   .eom-photo { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; object-position: center 20%; border: 4px solid #fff; box-shadow: 0 4px 16px rgba(16,29,37,.18); flex: none; }
   .eom-card > div:last-child { flex: 1 1 280px; }
@@ -215,7 +216,7 @@
       <a href="kepler-designs.html#services">Services</a>
       <a href="start-a-project.html" class="blue">Start a Project</a>
       <a href="about.html" class="blue">About</a>
-      <a href="employee-of-the-month.html" class="blue active" aria-current="page">Employee of the Month</a>
+      <a href="employees.html" class="blue active" aria-current="page">Employees</a>
       <a href="partner.html" class="btn btn-orange nav-partner">Become a Partner</a>
     </nav>
   </div>
@@ -236,19 +237,25 @@
 <!-- PAGE HEADER -->
 <section class="band">
   <div class="wrap">
-    <h1>Employee of the Month</h1>
-    <p>Recognizing the teammate who went above and beyond.</p>
+    <h1>Employees</h1>
+    <p>Meet the people behind Kepler Designs.</p>
   </div>
 </section>
 
 <main class="doc eom">
-  <p class="updated">November 2026</p>
   <div class="eom-card">
-    <img class="eom-photo" src="employee-of-the-month.webp" alt="Employee of the Month portrait">
+    <img class="eom-photo" src="lennon-helman.webp" alt="Lennon Helman portrait">
     <div>
       <h2>LENNON HELMAN</h2>
       <h3>WEB DESIGNER</h3>
       <p>Demonstrated good work ethic and sustained his goal for company revenue this month/</p>
+    </div>
+  </div>
+
+  <div class="eom-card">
+    <img class="eom-photo" src="cayden-jones.webp" alt="Cayden Jones portrait">
+    <div>
+      <h2>CAYDEN JONES</h2>
     </div>
   </div>
 </main>
